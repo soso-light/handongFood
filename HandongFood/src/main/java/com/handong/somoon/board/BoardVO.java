@@ -17,6 +17,7 @@ public class BoardVO {
 	private int sid;
 	private String userid;
 	private String username;
+	private String name;
 	private int star;
 	private int average_star;
 	private String address;
@@ -26,6 +27,7 @@ public class BoardVO {
 	private String review;
 	private String photo;
 	private String regdate;
+	
 	
 	public int getSid() {
 		return sid;
