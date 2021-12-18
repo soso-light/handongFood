@@ -39,23 +39,23 @@
 
 <table id="list" width="90%">
 <tr>
-	<th>Id</th>
-	<th>Title</th>
-	<th>Writer</th>
-	<th>Content</th>
-	<th>RegDate</th>
-	<th>Edit</th>
-	<th>Delete</th>
+	<th>음식점</th>
+	<th>category</th>
+	<th>위치</th>
+	<th>평점</th>
+	<th>세부사항</th>
+	<th>수정</th>
+	<th>음식점 삭제</th>
 </tr>
 <c:forEach items="${list}" var="u">
 	<tr>
-		<td>${u.seq}</td>
-		<td>${u.title}</td>
-		<td>${u.writer}</td>
-		<td>${u.content}</td>
-		<td>${u.regdate}</td>
-		<td><a href="editpost/${u.seq}">글수정</a></td>
-		<td><a href="javascript:delete_ok('${u.seq}')">글삭제</a></td>
+		<td>${u.getName()}</td>
+		<td>${u.getCategory()}</td>
+		<td>${u.getAddress()}</td>
+		<td>${u.getAverage()}</td>
+		<td><a href="gospec/${u.sid}">go</a></td>
+		<td><a href="editpost/${u.sid}">수정</a></td>
+		<td><a href="javascript:delete_ok('${u.sid}')">삭제</a></td>
 	</tr>
 </c:forEach>
 </table>

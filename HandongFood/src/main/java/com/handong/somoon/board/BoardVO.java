@@ -15,68 +15,65 @@ public class BoardVO {
 	 */
 	
 	private int sid;
-	private int Ranking;
-	private String Address;
-	private String Name;
-	private float Average;
-	private String Category;
-	private String URL;
-	private String Menu;
-	private String Photo;
-
+	//private int Ranking;
+	private String address;
+	private String name;
+	private float average;
+	private String category;
+	private String url;
+	private String menu;
+	private String photo;
+	
+	
 	public int getSid() {
 		return sid;
 	}
 	public void setSid(int sid) {
 		this.sid = sid;
 	}
-	public int getRanking() {
-		return Ranking;
-	}
-	public void setRanking(int ranking) {
-		Ranking = ranking;
-	}
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public float getAverage() {
-		return Average;
+		return average;
 	}
 	public void setAverage(float average) {
-		Average = average;
+		this.average = average;
 	}
 	public String getCategory() {
-		return Category;
+		return category;
 	}
 	public void setCategory(String category) {
-		Category = category;
+		this.category = category;
 	}
-	public String getURL() {
-		return URL;
+	public String getUrl() {
+		return url;
 	}
-	public void setURL(String uRL) {
-		URL = uRL;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 	public String getMenu() {
-		return Menu;
+		return menu;
 	}
 	public void setMenu(String menu) {
-		Menu = menu;
+		this.menu = menu;
 	}
 	public String getPhoto() {
-		return Photo;
+		return photo;
 	}
 	public void setPhoto(String photo) {
-		Photo = photo;
+		this.photo = photo;
 	}
 
+
 }
+

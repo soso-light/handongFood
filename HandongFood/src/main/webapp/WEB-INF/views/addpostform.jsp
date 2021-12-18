@@ -7,13 +7,27 @@
 <title>Add New Post</title>
 </head>
 <body>
-
-<h1>Add New Post</h1>
+<!-- name, category, address, photo, average, url, menu -->
+<h1>가게 추가</h1>
 <form action="addok" method="post">
 <table id="edit">
-<tr><td>Title:</td><td><input type="text" name="title"/></td></tr>
-<tr><td>Writer:</td><td><input type="text" name="writer"/></td></tr>
-<tr><td>Content:</td><td><textarea cols="50" rows="5" name="content"></textarea></td></tr>
+<tr><td>가게명:</td><td><input type="text" name="name"/></td></tr>
+<tr><td>카테고리:</td><td>
+	<select name="category" id="category">
+	    <option value="">--Please choose a category--</option>
+	    <option value="korea">한식</option>
+	    <option value="japan">일식</option>
+	    <option value="western">양식</option>
+	    <option value="china">중식</option>
+
+	</select>
+</td></tr>
+<tr><td>주소:</td><td><input type="text" name="username"/></td></tr>
+<tr><td>URL:</td><td><input type="text" name="url"/></td></tr>
+<tr><td>사진:</td><td><input type="file" name="photo" accept="image/png, image/jpeg">/></td></tr>
+
+<tr><td>별점:</td><td><input type="text" name="average"/></td></tr>
+<tr><td>메뉴:</td><td><textarea cols="50" rows="5" name="content"></textarea></td></tr>
 </table>
 <button type="button" onclick="location.href='list'">목록보기</button>
 <button type="submit">등록하기</button>

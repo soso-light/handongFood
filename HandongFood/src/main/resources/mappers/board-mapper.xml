@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- sid, userid, username, name, star, average_star, address, category, url, menu, review, photo;  -->	 
+<!-- 	name, category, address, photo, average, url, menu  -->	 
 <mapper namespace="Board">
 	<insert id="insertBoard">
 		insert into HandongFood 
-		(Ranking, Address, Name, Average, Category, URL, Menu, Photo)
-		values( #{Ranking}, #{Address}, #{Name}, #{Average}, , #{Category}, #{URL}, #{Menu}, #{Photo})
+		(name, category, address, photo, average, url, menu)
+		values( #{name}, #{category}, #{address}, #{photo}, #{average}, #{url}, #{menu})
 	</insert>
 	<update id="updateBoard">
 		update HandongFood
-		set Ranking=#{Ranking}, Address=#{Address}, Name=#{Name}, Average=#{Average}, Category=#{Category}, URL=#{URL}, Menu=#{Menu}, Photo=#{Photo}
+		set name=#{name}, category=#{category}, address=#{address}, photo=#{photo}, average=#{average}, url=#{url}, menu=#{menu} 
 		where sid=#{sid}
 	</update>
 	<delete id="deleteBoard">
-		delete from HandongFood where Name=#{Name}
+		delete from HandongFood where name=#{name}
 	</delete>
 	<select id="getBoard" resultType="board">
 		select * from HandongFood where sid=#{sid}
 	</select>
 	<select id="getBoardList" resultType="board">
-		select * from HandongFood order by sid desc
+		select * from HandongFood order by average desc
 	</select>
+
 </mapper>
