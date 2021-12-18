@@ -3,33 +3,22 @@
 <!-- sid, userid, username, name, star, average_star, address, category, url, menu, review, photo;  -->	 
 <mapper namespace="Board">
 	<insert id="insertBoard">
-		insert into BOARD 
-		( username, name, star, address, category, url, menu, review, photo)
-		values( #{username}, #{name}, #{star}, #{address}, , #{category}, #{url}, #{menu}, #{review}, #{photo})
+		insert into HandongFood 
+		(Ranking, Address, Name, Average, Category, URL, Menu, Photo)
+		values( #{Ranking}, #{Address}, #{Name}, #{Average}, , #{Category}, #{URL}, #{Menu}, #{Photo})
 	</insert>
 	<update id="updateBoard">
-		update BOARD
-		set username=#{username}, name=#{name}, address=#{address}, category=#{category}, url=#{url}, menu=#{menu}
+		update HandongFood
+		set Ranking=#{Ranking}, Address=#{Address}, Name=#{Name}, Average=#{Average}, Category=#{Category}, URL=#{URL}, Menu=#{Menu}, Photo=#{Photo}
 		where sid=#{sid}
 	</update>
-	<update id="updateReview">
-		update BOARD
-		set username=#{username}, star=#{star}, review=#{review}, photo=#{photo}
-		where sid=#{sid}
-	</update>
-	<delete id="deleteReview">
-		delete from BOARD where sid=#{sid}
-	</delete>
 	<delete id="deleteBoard">
-		delete from BOARD where name=#{name}
+		delete from HandongFood where Name=#{Name}
 	</delete>
 	<select id="getBoard" resultType="board">
-		select * from BOARD where sid=#{sid}
+		select * from HandongFood where sid=#{sid}
 	</select>
 	<select id="getBoardList" resultType="board">
-		select * from BOARD DISTINCT order by seq desc
-	</select>
-	<select id="getReviewList" resultType="board">
-		select * from BOARD where name = #{sid} order by seq desc
+		select * from HandongFood order by sid desc
 	</select>
 </mapper>

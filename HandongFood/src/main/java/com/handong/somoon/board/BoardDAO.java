@@ -22,17 +22,8 @@ public class BoardDAO {
 		int result = sqlSession.update("Board.updateBoard", vo);
 		return result;
 	}
-	public int updateReview(BoardVO vo) {
-		int result = sqlSession.update("Board.updateReview", vo);
-		return result;
-	}
-
 	public int deleteBoard(int seq) {
 		int result = sqlSession.delete("Board.deleteBoard", seq);
-		return result;
-	}
-	public int deleteReview(int seq) {
-		int result = sqlSession.delete("Board.deleteReview", seq);
 		return result;
 	}
 
@@ -43,11 +34,6 @@ public class BoardDAO {
 
 	public List<BoardVO> getBoardList() {
 		List<BoardVO> result = sqlSession.selectList("Board.getBoardList");
-		return result;
-	}
-	
-	public List<BoardVO> getReviewList() {
-		List<BoardVO> result = sqlSession.selectList("Board.getReviewList");
 		return result;
 	}
 	

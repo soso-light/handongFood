@@ -3,103 +3,80 @@ package com.handong.somoon.board;
 public class BoardVO {
 	/*
 	 * sid int AUTO_INCREMENT, 
-	 * userid varchar(20), 
-	 * username varchar(40),
-	 * password varchar(40), 
-	 * email varchar(60), 
-	 * blogurl varchar(100), 
-	 * photo varchar(30),
-	 * detail varchar(100), 
-	 * regdate timestamp default CURRENT_TIMESTAMP, 
-	 * primary key(sid)
+	 * Ranking int, 
+	 * Address varchar(100), 
+	 * Name varchar(100),
+	 * Average float,
+	 * Category varchar(100), 
+	 * URL varchar(100), 
+	 * Menu varchar(150),
+	 * Photo longblob
 	 * 
 	 */
+	
 	private int sid;
-	private String userid;
-	private String username;
-	private String name;
-	private int star;
-	private int average_star;
-	private String address;
-	private String category;
-	private String url;
-	private String menu;
-	private String review;
-	private String photo;
-	private String regdate;
-	
-	
+	private int Ranking;
+	private String Address;
+	private String Name;
+	private float Average;
+	private String Category;
+	private String URL;
+	private String Menu;
+	private String Photo;
+
 	public int getSid() {
 		return sid;
 	}
 	public void setSid(int sid) {
 		this.sid = sid;
 	}
-	public String getUserid() {
-		return userid;
+	public int getRanking() {
+		return Ranking;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public int getStar() {
-		return star;
-	}
-	public void setStar(int star) {
-		this.star = star;
-	}
-	public int getAverage_star() {
-		return average_star;
-	}
-	public void setAverage_star(int average_star) {
-		this.average_star = average_star;
+	public void setRanking(int ranking) {
+		Ranking = ranking;
 	}
 	public String getAddress() {
-		return address;
+		return Address;
 	}
 	public void setAddress(String address) {
-		this.address = address;
+		Address = address;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	public float getAverage() {
+		return Average;
+	}
+	public void setAverage(float average) {
+		Average = average;
 	}
 	public String getCategory() {
-		return category;
+		return Category;
 	}
 	public void setCategory(String category) {
-		this.category = category;
+		Category = category;
 	}
-	public String getUrl() {
-		return url;
+	public String getURL() {
+		return URL;
 	}
-	public void setUrl(String url) {
-		this.url = url;
+	public void setURL(String uRL) {
+		URL = uRL;
 	}
 	public String getMenu() {
-		return menu;
+		return Menu;
 	}
 	public void setMenu(String menu) {
-		this.menu = menu;
-	}
-	public String getReview() {
-		return review;
-	}
-	public void setReview(String review) {
-		this.review = review;
+		Menu = menu;
 	}
 	public String getPhoto() {
-		return photo;
+		return Photo;
 	}
 	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-	public String getRegdate() {
-		return regdate;
-	}
-	public void setRegdate(String regdate) {
-		this.regdate = regdate;
+		Photo = photo;
 	}
 
 }

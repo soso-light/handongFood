@@ -38,20 +38,4 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.getBoardList();
 	}
 
-	@Override
-	public int updateReview(BoardVO vo) {
-		return boardDAO.updateReview(vo);
-
-	}
-
-	@Override
-	public int deleteReview(int seq) {
-		return boardDAO.deleteReview(seq);
-	}
-
-	@Override
-	public List<BoardVO> getReviewList() {
-		return boardDAO.getReviewList();
-	}
-
 }
