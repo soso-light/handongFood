@@ -13,7 +13,7 @@
 		where sid=#{sid}
 	</update>
 	<delete id="deleteBoard">
-		delete * from HandongFood where sid=#{sid}
+		delete from HandongFood where sid=#{sid}
 	</delete>
 	<select id="getBoard" resultType="board">
 		select * from HandongFood where sid=#{sid}

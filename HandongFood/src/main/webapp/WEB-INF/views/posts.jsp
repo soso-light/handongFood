@@ -30,12 +30,12 @@
 <script>
 	function delete_ok(id){
 		var a = confirm("정말로 삭제하겠습니까?");
-		if(a) location.href='deleteok/' + id;
+		if(a) location.href='delete_ok/' + id;
 	}
 </script>
 </head>
 <body>
-<h1>자유게시판</h1>
+<h1>맛집게시판</h1>
 
 <table id="list" width="90%">
 <tr>

@@ -48,14 +48,14 @@ public class BoardController {
       return "redirect:list";
    }
 
-   @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
-   public String deletePostOk(@PathVariable("id") int id) {
-      if (boardService.deleteBoard(id) == 0)
-         System.out.println("데이터 삭제 실패 ");
-      else
-         System.out.println("데이터 삭제 성공!!!");
-      return "redirect:../list";
-   }
+	@RequestMapping(value = "/delete_ok/{id}", method = RequestMethod.GET)
+	public String deletePostOk(@PathVariable("id") int id) {
+		if (boardService.deleteBoard(id) == 0)
+			System.out.println("데이터 삭제 실패 ");
+		else
+			System.out.println("데이터 삭제 성공!!!");
+		return "redirect:../list";
+	}
    
    @RequestMapping(value = "/gospec/{id}", method = RequestMethod.GET)
    public String specPost(@PathVariable("id") int id, Model model) {

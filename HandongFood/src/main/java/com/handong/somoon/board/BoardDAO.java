@@ -22,8 +22,8 @@ public class BoardDAO {
 		int result = sqlSession.update("Board.updateBoard", vo);
 		return result;
 	}
-	public int deleteBoard(int seq) {
-		int result = sqlSession.delete("Board.deleteBoard", seq);
+	public int deleteBoard(int sid) {
+		int result = sqlSession.delete("Board.deleteBoard", sid);
 		return result;
 	}
 
