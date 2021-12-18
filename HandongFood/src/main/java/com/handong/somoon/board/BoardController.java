@@ -9,52 +9,68 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(value = "/board")
 public class BoardController {
-	@Autowired
-	BoardService boardService;
+   @Autowired
+   BoardService boardService;
 
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String boardlist(Model model) {
-		model.addAttribute("list", boardService.getBoardList());
-		return "posts";
-	}
+   @RequestMapping(value = "/list", method = RequestMethod.GET)
+   public String boardlist(Model model) {
+      model.addAttribute("list", boardService.getBoardList());
+      return "posts";
+   }
 
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String addPost() {
-		return "addpostform";
-	}
+   @RequestMapping(value = "/add", method = RequestMethod.GET)
+   public String addPost() {
+      return "addpostform";
+   }
 
-	@RequestMapping(value = "/addok", method = RequestMethod.POST)
-	public String addPostOk(BoardVO vo) {
-		if (boardService.insertBoard(vo) == 0)
-			System.out.println("데이터 추가 실패 ");
-		else
-			System.out.println("데이터 추가 성공!!!");
-		return "redirect:list";
-	}
+   @RequestMapping(value = "/addok", method = RequestMethod.POST)
+   public String addPostOk(BoardVO vo) {
+      if (boardService.insertBoard(vo) == 0)
+         System.out.println("데이터 추가 실패 ");
+      else
+         System.out.println("데이터 추가 성공!!!");
+      return "redirect:list";
+   }
 
-	@RequestMapping(value = "/editpost/{id}", method = RequestMethod.GET)
-	public String editPost(@PathVariable("id") int id, Model model) {
-		BoardVO boardVO = boardService.getBoard(id);
-		model.addAttribute("u", boardVO);
-		return "editform";
-	}
+   @RequestMapping(value = "/editpost/{id}", method = RequestMethod.GET)
+   public String editPost(@PathVariable("id") int id, Model model) {
+      BoardVO boardVO = boardService.getBoard(id);
+      model.addAttribute("boardVO", boardVO);
+      return "editform";
+   }
 
-	@RequestMapping(value = "/editok", method = RequestMethod.POST)
-	public String editPostOk(BoardVO vo) {
-		if (boardService.updateBoard(vo) == 0)
-			System.out.println("데이터 수정 실패 ");
-		else
-			System.out.println("데이터 수정 성공!!!");
-		return "redirect:list";
-	}
+   @RequestMapping(value = "/editok", method = RequestMethod.POST)
+   public String editPostOk(BoardVO vo) {
+      if (boardService.updateBoard(vo) == 0)
+         System.out.println("데이터 수정 실패 ");
+      else
+         System.out.println("데이터 수정 성공!!!");
+      return "redirect:list";
+   }
 
-	@RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
-	public String deletePostOk(@PathVariable("id") int id) {
-		if (boardService.deleteBoard(id) == 0)
-			System.out.println("데이터 삭제 실패 ");
-		else
-			System.out.println("데이터 삭제 성공!!!");
-		return "redirect:../list";
-	}
+   @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
+   public String deletePostOk(@PathVariable("id") int id) {
+      if (boardService.deleteBoard(id) == 0)
+         System.out.println("데이터 삭제 실패 ");
+      else
+         System.out.println("데이터 삭제 성공!!!");
+      return "redirect:../list";
+   }
+   
+   @RequestMapping(value = "/gospec/{id}", method = RequestMethod.GET)
+   public String specPost(@PathVariable("id") int id, Model model) {
+      BoardVO boardVO = boardService.getBoard(id);
+      model.addAttribute("boardVO", boardVO);
+      return "gospec";
+   }
+   
+   @RequestMapping(value = "/specok", method = RequestMethod.POST)
+   public String specPostOk(BoardVO vo) {
+      if (boardService.updateBoard(vo) == 0)
+         System.out.println("데이터 수정 실패 ");
+      else
+         System.out.println("데이터 수정 성공!!!");
+      return "redirect:list";
+   }
 
 }
