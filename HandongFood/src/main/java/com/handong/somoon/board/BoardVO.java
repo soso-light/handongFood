@@ -15,7 +15,6 @@ public class BoardVO {
 	 */
 	
 	private int sid;
-	//private int Ranking;
 	private String address;
 	private String name;
 	private float average;
