@@ -15,10 +15,10 @@
 <tr><td>카테고리:</td><td>
 	<select name="category" id="category">
 	    <option value="">--Please choose a category--</option>
-	    <option value="korea">한식</option>
-	    <option value="japan">일식</option>
-	    <option value="western">양식</option>
-	    <option value="china">중식</option>
+	    <option value="한식">한식</option>
+	    <option value="한식">한식</option>
+	    <option value="양식">양식</option>
+	    <option value="중식">중식</option>
 
 	</select>
 </td></tr>
