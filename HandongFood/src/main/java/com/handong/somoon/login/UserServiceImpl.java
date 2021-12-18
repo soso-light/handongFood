@@ -15,7 +15,7 @@ public class UserServiceImpl {
 		return userDAO.getUser(vo);
 	}
 	
-	public int insertAdmin() {
-		return userDAO.insertAdmin();
+	public int insertAdmin(UserVO vo) {
+		return userDAO.insertAdmin(vo);
 	}
 }

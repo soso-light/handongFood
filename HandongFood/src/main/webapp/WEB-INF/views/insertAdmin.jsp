@@ -10,6 +10,11 @@
 	회원 가입
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<form action="insertok" method="post">
+	userID:<input type="text" name="userid"><br>
+	userName:<input type="text" name="username"><br>
+	Password:<input type="password" name="password"><br>
+	<input type="submit" value="SIGN_UP">
+</form>
 </body>
 </html>

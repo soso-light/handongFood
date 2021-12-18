@@ -19,6 +19,7 @@
 <div><label>User ID: </label><input type="text" name="userid"/></div>
 <div><label>Password: </label><input type="password" name="password"/></div>
 <button type="submit">login</button>
+<input type="button" name="register" value="회원가입" onClick="location.href='insertAdmin'">
 </form>
 </div>
 </body>
